@@ -9,7 +9,7 @@ export const Fullblog =({blog}:{blog:Blog})=>{
            <div className="text-3xl font-extrabold ">{blog.title}</div>
         </div>
         <div className="">
-            {blog.id}
+            {blog.content}
         </div>
         <div className="col-span-4">
       

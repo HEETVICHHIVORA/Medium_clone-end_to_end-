@@ -4,15 +4,14 @@ import { BACKEND_URL } from "../config";
 export interface Blog{
   "content":string;
   "title":string;
-  "id":string
+  "id":string;
   "author":{
     "name":string
   }
 }
 export const useBlog=(({id}:{id:string})=>{
     const [loading,setLoading]= useState(true);
-    const [blog,setblog]=useState<Blog>()    
-   
+    const [blog,setblog]=useState<Blog>()  
 useEffect(() => {
  async function fetchBlogs() {
   
@@ -21,15 +20,17 @@ useEffect(() => {
        headers:{
            Authorization:localStorage.getItem("token")
        }
+      
      });
-
+   
      if (response.status !== 200) {
        throw new Error(`Error fetching blogs: ${response.status}`);
      }
 
      const data = response.data;
-     setblog(data.blogs);
-      console.log(setblog)
+     console.log(data)
+     setblog(data.blog);
+     
    } catch (error) {
      console.error("Error fetching blogs:", error);
    } finally {
