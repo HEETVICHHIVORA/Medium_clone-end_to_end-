@@ -20,7 +20,7 @@ export const Blog =()=>{
        </div>
            </div>
         </div>
-      }
+    }
     
     return <div>
         <Fullblog blog={blog}></Fullblog>
